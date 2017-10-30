@@ -4,7 +4,8 @@
 #include <vector>
  
 using namespace std;
-int main()
+
+int main(int argc, char* argv[])
 {
 	vector<int> srcVec;
 	for (int val = 0; val < 10; val++)
@@ -12,10 +13,9 @@ int main()
 		srcVec.push_back(val);
 	}
  
-	for_each(srcVec.begin(), srcVec.end(), [](int _n)
-	{
-		cout << _n << " ";
-	});
+    for_each(srcVec.begin(), srcVec.end(), 
+        [] (int _n) { cout << _n << " "; }  // lambda
+    );
 	cout << endl;
  
 	return EXIT_SUCCESS;
